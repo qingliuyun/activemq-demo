@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.dceast.platform</groupId>
+  <artifactId>activemq-demo</artifactId>
+  <version>0.0.1</version>
+  
+  <name>${project.groupId}:${project.artifactId}</name>
+    <description>Qingliuyun Team</description>
+    <url>https://github.com/qingliuyun</url>
+    
+    <licenses>
+     <license>
+       <name>The Apache License, Version 2.0</name>
+       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+     </license>
+   </licenses>
+   
+   <developers>
+	    <developer>
+	      <name>zhangweilai</name>
+	      <email>zhangweilai@126.com</email>
+	      <organization>qingliuyun</organization>
+	      <organizationUrl>http://www.qingliuyun.com</organizationUrl>
+	    </developer>
+    </developers>
+    
+    <dependencies>
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-all</artifactId>
+		    <version>5.15.0</version>
+		</dependency>
+		    	
+    </dependencies>
+    
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- compiler插件, 设定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <executions>
+			        <execution>
+			          <id>attach-javadocs</id>
+			          <goals>
+			            <goal>jar</goal>
+			          </goals>
+			        </execution>
+			      </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+        </plugins>
+    </build>
+</project>
